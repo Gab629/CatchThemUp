@@ -14,13 +14,14 @@ public class FishingMecanic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
-            if (Input.GetMouseButtonDown(0))
-            {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
-                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+            Debug.Log("held");
 
             if (hit.collider != null)
             {
@@ -29,13 +30,16 @@ public class FishingMecanic : MonoBehaviour
                     int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
                     int health = hit.transform.gameObject.GetComponent<Fish>().health --;
                     gameManager.GetComponent<GameManager>().score += score;
-                    
-
                 }
-
-
             }
         }
+         else if(Input.GetMouseButton(0)){
+             Debug.Log("Held");
+         }
+
+         else if(!Input.GetMouseButton(0)){
+             Debug.Log("not Held");
+         }
     }
 
     
