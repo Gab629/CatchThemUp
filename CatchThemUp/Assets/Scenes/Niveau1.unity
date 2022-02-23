@@ -581,6 +581,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePoisson: 10
+  speed: 2
+  health: 3
+  targetName: Target
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +678,7 @@ GameObject:
   - component: {fileID: 738057264}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -875,8 +878,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   gameManager: {fileID: 1755656930}
-  speed: 2
-  target: {fileID: 0}
 --- !u!212 &1547166074
 SpriteRenderer:
   m_ObjectHideFlags: 0
