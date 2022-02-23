@@ -21,11 +21,9 @@ public class FishingMecanic : MonoBehaviour
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-            Debug.Log("held");
-
             if (hit.collider != null)
             {
-                if(hit.transform.name == "Poisson")
+                if(hit.transform.name == "Poisson(Clone)")
                 {
                     int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
                     int health = hit.transform.gameObject.GetComponent<Fish>().health --;
@@ -33,13 +31,13 @@ public class FishingMecanic : MonoBehaviour
                 }
             }
         }
-         else if(Input.GetMouseButton(0)){
-             Debug.Log("Held");
-         }
+        //  else if(Input.GetMouseButton(0)){
+        //      Debug.Log("Held");
+        //  }
 
-         else if(!Input.GetMouseButton(0)){
-             Debug.Log("not Held");
-         }
+        //  else if(!Input.GetMouseButton(0)){
+        //      Debug.Log("not Held");
+        //  }
     }
 
     
