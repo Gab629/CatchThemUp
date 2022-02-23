@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     private float timer = 30f;
     public Text texteTemps;
-    public int score;
+    public int score = 20;
     public Text texteScore;
 
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         AfficherTemps();
+        AfficherScore();
     }
 
     private void AfficherTemps()
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     
     private void AfficherScore()
     {
-        //texteScore = score.ToString();
+        texteScore.text = score.ToString() + " points";
 
 
     }

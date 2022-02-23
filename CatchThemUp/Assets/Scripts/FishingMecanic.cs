@@ -7,6 +7,7 @@ public class FishingMecanic : MonoBehaviour
 {
     private GameObject currentClickedGameObject;
     public Camera cam;
+    public GameObject gameManager;
 
 
     // Start is called before the first frame update
@@ -28,9 +29,10 @@ public class FishingMecanic : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if(hit.transform.name == "Circle")
+                if(hit.transform.name == "Poisson")
                 {
-                    Debug.Log(hit.transform);
+                    int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
+                    gameManager.GetComponent<GameManager>().score += score;
                 }
                 
             }
