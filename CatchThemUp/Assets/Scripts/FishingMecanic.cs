@@ -32,9 +32,13 @@ public class FishingMecanic : MonoBehaviour
                 if(hit.transform.name == "Poisson")
                 {
                     int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
+                    int health = hit.transform.gameObject.GetComponent<Fish>().health --;
                     gameManager.GetComponent<GameManager>().score += score;
+                    
+
                 }
-                
+
+
             }
         }
         }

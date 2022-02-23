@@ -5,6 +5,10 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     public int scorePoisson;
+    public float speed;
+    public int health;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +19,12 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+
     }
+
 }
