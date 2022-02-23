@@ -13,7 +13,7 @@ public class Fish : MonoBehaviour
     //Mouvement poisson
     
     private Transform target;
-    public string targetName;
+    private string targetName = "Target";
     private Vector3 targetPos;
     private Vector3 thisPos;
     private float angle;
@@ -23,7 +23,7 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find(targetName).GetComponent<Transform>();
+        target = GameObject.Find(targetName + Random.Range(1, 8).ToString()).GetComponent<Transform>();
 
     }
 
