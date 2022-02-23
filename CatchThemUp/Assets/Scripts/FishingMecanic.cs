@@ -28,7 +28,11 @@ public class FishingMecanic : MonoBehaviour
 
             if (hit.collider != null)
             {
-                Debug.Log(hit.transform.name);
+                if(hit.transform.name == "Circle")
+                {
+                    Debug.Log(hit.transform);
+                }
+                
             }
         }
         }
