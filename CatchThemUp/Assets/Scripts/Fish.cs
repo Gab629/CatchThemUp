@@ -17,7 +17,7 @@ public class Fish : MonoBehaviour
     private Vector3 targetPos;
     private Vector3 thisPos;
     private float angle;
-    private float rotationOffset = 90;
+    private float rotationOffset = -90;
 
 
     // Start is called before the first frame update
