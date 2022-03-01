@@ -7,8 +7,16 @@ public class FishingMecanic : MonoBehaviour
 {
     public Camera cam;
     public GameObject gameManager;
-    public GameObject fishingLine;
 
+    private GameObject fishingLine;
+    private bool isCurrentFish;
+
+
+    private void Start()
+    {
+        fishingLine = GameObject.Find("LineRenderer");
+        fishingLine.GetComponent<LineControler>().isFish = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,7 +32,10 @@ public class FishingMecanic : MonoBehaviour
             {
                 if (hit.transform.name == "Poisson(Clone)")
                 {
+                    isCurrentFish = fishingLine.GetComponent<LineControler>().isFish = true;
                     fishingLine.GetComponent<LineControler>().fishCatched = hit.transform.gameObject;
+                    
+
                     int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
                     int health = hit.transform.gameObject.GetComponent<Fish>().health --;
                     gameManager.GetComponent<GameManager>().score += score;

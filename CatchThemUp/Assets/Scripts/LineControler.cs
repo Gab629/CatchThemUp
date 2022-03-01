@@ -11,6 +11,8 @@ public class LineControler : MonoBehaviour
     public GameObject fishingRod;
     public GameObject fishCatched;
 
+    public bool isFish = false; 
+
     private void Awake()
     {
         
@@ -25,15 +27,20 @@ public class LineControler : MonoBehaviour
 
     private void Update()
     {
+        if(isFish != false)
+        {
+            lineRenderer.enabled = true;
+            SetupLine(points);
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+        }
 
-        SetFishPosition();
-        SetupLine(points);
+        
     }
 
-    void SetFishPosition()
-    {
-
-    }
+    
 
 
 
@@ -41,9 +48,8 @@ public class LineControler : MonoBehaviour
     {   
         Vector3 playerPos = fishingRod.transform.position;
         Vector3 fishPos = fishCatched.transform.position;
+
         points = new Vector3[2] { playerPos, fishPos};
-
-
 
 
         lineRenderer.positionCount = 2;
