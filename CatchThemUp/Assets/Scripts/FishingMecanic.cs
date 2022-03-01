@@ -5,11 +5,10 @@ using UnityEngine.EventSystems;
 
 public class FishingMecanic : MonoBehaviour
 {
-    private GameObject currentClickedGameObject;
     public Camera cam;
     public GameObject gameManager;
+    public GameObject fishingLine;
 
-    
 
     // Update is called once per frame
     void Update()
@@ -23,22 +22,32 @@ public class FishingMecanic : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if(hit.transform.name == "Poisson(Clone)")
+                if (hit.transform.name == "Poisson(Clone)")
                 {
+                    fishingLine.GetComponent<LineControler>().fishCatched = hit.transform.gameObject;
                     int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
                     int health = hit.transform.gameObject.GetComponent<Fish>().health --;
                     gameManager.GetComponent<GameManager>().score += score;
+
                 }
             }
-        }
-        //  else if(Input.GetMouseButton(0)){
-        //      Debug.Log("Held");
-        //  }
+        }/*else if(Input.GetMouseButton(0)){
+              Debug.Log("Held");
+          }
 
-        //  else if(!Input.GetMouseButton(0)){
-        //      Debug.Log("not Held");
-        //  }
+          else if(!Input.GetMouseButton(0)){
+              Debug.Log("not Held");
+          }
+         */
+
+
+
+        
     }
+
+
+
+
 
     
     

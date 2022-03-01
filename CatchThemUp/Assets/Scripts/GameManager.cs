@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         texteTemps.text = Mathf.Round(timer).ToString();
 
+        if(timer <= 0)
+        {
+            timer = 0;
+        }
 
     }
     
