@@ -76,10 +76,9 @@ public class FishingMecanic : MonoBehaviour
 
         if (trigger.GetComponent<ReflexBar>().speed >= -600f && trigger.GetComponent<ReflexBar>().speed <= 600f)
         {
-            trigger.GetComponent<ReflexBar>().speed += 10;
+            trigger.GetComponent<ReflexBar>().speed += 20;
+            gameManager.GetComponent<GameManager>().timer += 3f;
         }
-
-        Debug.Log("yeet");
 
         reflexBar.SetActive(false);
     }

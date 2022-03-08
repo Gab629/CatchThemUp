@@ -895,6 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c6f68897f3b584abf50bdebcb47b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 150
   isOnHotSpot: 0
   player: {fileID: 1993960756}
 --- !u!61 &585109768
@@ -1711,6 +1712,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8887159842998709115, guid: 7de687b154a2ebb4aa31f809e68ebccc, type: 3}
+      propertyPath: reflexBar
+      value: 
+      objectReference: {fileID: 1569439598}
+    - target: {fileID: 8887159842998709115, guid: 7de687b154a2ebb4aa31f809e68ebccc, type: 3}
       propertyPath: texteScore
       value: 
       objectReference: {fileID: 118700608}
@@ -1735,6 +1740,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7566508245619223001, guid: 70f9939369ca8d74caefbeeff5e9ec35, type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 585109762}
+    - target: {fileID: 7566508245619223001, guid: 70f9939369ca8d74caefbeeff5e9ec35, type: 3}
+      propertyPath: reflexBar
+      value: 
+      objectReference: {fileID: 1569439598}
     - target: {fileID: 7566508245619223001, guid: 70f9939369ca8d74caefbeeff5e9ec35, type: 3}
       propertyPath: fishingLine
       value: 

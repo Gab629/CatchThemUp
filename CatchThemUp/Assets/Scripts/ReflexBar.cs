@@ -10,7 +10,7 @@ public class ReflexBar : MonoBehaviour
     private Rigidbody2D rbTrigger;
 
     private float direction = 1;
-    public float speed = 150f;
+    public float speed = 160f;
 
     public bool isOnHotSpot = false;
 

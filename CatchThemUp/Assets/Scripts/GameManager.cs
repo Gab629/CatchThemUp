@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
-    private float timer = 60f;
+    public float timer = 60f;
     public Text texteTemps;
     public int score = 20;
     public Text texteScore;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         if(timer <= 0)
         {
             timer = 0;
+            SceneManager.LoadScene("End");
         }
 
     }
