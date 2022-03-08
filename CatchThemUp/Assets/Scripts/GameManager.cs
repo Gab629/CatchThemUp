@@ -6,16 +6,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    private float timer = 30f;
+    private float timer = 60f;
     public Text texteTemps;
     public int score = 20;
     public Text texteScore;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()

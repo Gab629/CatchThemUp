@@ -9,7 +9,8 @@ public class ReflexBar : MonoBehaviour
     
     private Rigidbody2D rbTrigger;
 
-    private float directionSpeed = 150f;
+    private float direction = 1;
+    public float speed = 150f;
 
     public bool isOnHotSpot = false;
 
@@ -42,7 +43,7 @@ public class ReflexBar : MonoBehaviour
     {
 
         
-        Vector2 directionVector = new Vector2(directionSpeed, gameObject.transform.position.y);
+        Vector2 directionVector = new Vector2(direction * speed, gameObject.transform.position.y);
         rbTrigger.velocity = directionVector;
 
 
@@ -62,8 +63,9 @@ public class ReflexBar : MonoBehaviour
     {
         if (collision.transform.tag == "ReflexBar")
         {
-            directionSpeed = -directionSpeed;
-        }else if(collision.transform.tag == "HotSpot")
+            direction = -direction;
+        }
+        else if(collision.transform.tag == "HotSpot")
         {
             isOnHotSpot = false;
         }

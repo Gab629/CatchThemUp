@@ -16,11 +16,16 @@ public class FishingMecanic : MonoBehaviour
 
     private int score;
 
+    public GameObject trigger;
+    public GameObject reflexBar;
+
 
     private void Start()
     {
         fishingLine = GameObject.Find("LineRenderer");
         fishingLine.GetComponent<LineControler>().isFish = false;
+
+        reflexBar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,7 +59,7 @@ public class FishingMecanic : MonoBehaviour
 
 
                     score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
-
+                    reflexBar.SetActive(true);
 
 
                 }
@@ -69,6 +74,14 @@ public class FishingMecanic : MonoBehaviour
         gameManager.GetComponent<GameManager>().score += score;
         fishingLine.GetComponent<LineControler>().isFish = false;
 
+        if (trigger.GetComponent<ReflexBar>().speed >= -600f && trigger.GetComponent<ReflexBar>().speed <= 600f)
+        {
+            trigger.GetComponent<ReflexBar>().speed += 10;
+        }
+
+        Debug.Log("yeet");
+
+        reflexBar.SetActive(false);
     }
 
 
