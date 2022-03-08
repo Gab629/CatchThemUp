@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,10 @@ public class FishingMecanic : MonoBehaviour
     private GameObject fishingLine;
     private bool isCurrentFish;
 
+    private GameObject currentFish;
+
+    private int score;
+
 
     private void Start()
     {
@@ -20,6 +25,17 @@ public class FishingMecanic : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+
+
+
+       ClickOnFish();
+       
+
+    }
+
+  
+    private void ClickOnFish()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -34,30 +50,26 @@ public class FishingMecanic : MonoBehaviour
                 {
                     isCurrentFish = fishingLine.GetComponent<LineControler>().isFish = true;
                     fishingLine.GetComponent<LineControler>().fishCatched = hit.transform.gameObject;
-                    
+                    currentFish = hit.transform.gameObject;
 
-                    int score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
-                    int health = hit.transform.gameObject.GetComponent<Fish>().health --;
-                    gameManager.GetComponent<GameManager>().score += score;
+
+                    score = hit.transform.gameObject.GetComponent<Fish>().scorePoisson;
+
+
 
                 }
             }
-        }/*else if(Input.GetMouseButton(0)){
-              Debug.Log("Held");
-          }
-
-          else if(!Input.GetMouseButton(0)){
-              Debug.Log("not Held");
-          }
-         */
-
-
-
-        
+        }
     }
 
 
+    public void FishCatched()
+    {
+        Destroy(currentFish);
+        gameManager.GetComponent<GameManager>().score += score;
+        fishingLine.GetComponent<LineControler>().isFish = false;
 
+    }
 
 
     

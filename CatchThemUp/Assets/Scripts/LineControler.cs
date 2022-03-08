@@ -27,7 +27,14 @@ public class LineControler : MonoBehaviour
 
     private void Update()
     {
-        if(isFish != false)
+
+
+        IsFish();
+    }
+
+    private void IsFish()
+    {
+        if (isFish != false)
         {
             lineRenderer.enabled = true;
             SetupLine(points);
@@ -36,8 +43,6 @@ public class LineControler : MonoBehaviour
         {
             lineRenderer.enabled = false;
         }
-
-        
     }
 
     
